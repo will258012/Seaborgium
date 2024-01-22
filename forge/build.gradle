@@ -59,10 +59,11 @@ configurations {
 
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
-    modLocalRuntime("maven.modrinth:rubidium:0.6.4")
+ /*   modLocalRuntime("maven.modrinth:rubidium:0.6.4")
     //(files("./remap/canary-mc1.19.2-0.1.9.jar"))
     modLocalRuntime("maven.modrinth:spark:1.9.45-forge")
     modLocalRuntime("maven.modrinth:starlight-forge:1.1.1+1.19")
+*/
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
@@ -79,17 +80,17 @@ shadowJar {
     exclude "fabric.mod.json"
 
     configurations = [project.configurations.shadowCommon]
-    classifier "dev-shadow"
+    archiveClassifier.set("dev-shadow")
 }
 
 remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    classifier null
+    archiveClassifier.set(null)
 }
 
 jar {
-    classifier "dev"
+    archiveClassifier.set("dev")
 }
 
 sourcesJar {
