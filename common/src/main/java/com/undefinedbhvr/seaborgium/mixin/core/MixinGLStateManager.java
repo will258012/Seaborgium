@@ -14,7 +14,7 @@ public class MixinGLStateManager {
      * @author UndefinedBHVR
      * @reason Implements a basic cache for _glGetUniformLocation().
      */
-    @Overwrite
+@Overwrite(remap = false)
     public static int _glGetUniformLocation(int i, CharSequence charSequence) {
         RenderSystem.assertOnRenderThread();
         return get_cached_shaders().computeIfAbsent(i, v -> new CachedShaderProgram(i)).get_uniform_location((String) charSequence);
