@@ -16,7 +16,7 @@ public class CacheSubcommand {
     public static int execute(CommandContext<CommandSourceStack> context) {
         RenderSystem.assertOnRenderThread();
         Seaborgium.invalidate_shaders();
-        context.getSource().sendSuccess(Component.literal("Invalidated shader cache"), false);
+        context.getSource().sendSuccess(() -> Component.literal("Invalidated shader cache"), false);
         return 1;
-    }
+    }    
 }
