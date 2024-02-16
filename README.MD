@@ -6,7 +6,7 @@ Seaborgium is a free and open source optimization mod for Minecraft. It improves
 
 ## Installation
 ### Manual Installation
-~~In order to install Seaborgium, it is preferred you download the mod from our [Modrinth](https://modrinth.com/mod/seaborgium) page.~~
+In order to install Seaborgium, it is preferred you download the mod from our [Modrinth](https://modrinth.com/mod/seaborgium) page.
 
 Then, you just need to place the appropriate version into your `mods` folder. Seaborgium provides a `unified` jar, which means it contains both the Fabric and Forge versions of the mod. 
 You do not need to download a loader specific version.
